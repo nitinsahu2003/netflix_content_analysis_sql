@@ -31,7 +31,7 @@ WHERE type = 'Movie' AND release_year = 2020;
 SELECT TRIM(UNNEST(STRING_TO_ARRAY(country, ','))) AS country, COUNT(show_id) AS total_shows
 FROM netflix
 WHERE country IS NOT NULL
-GROUP BY 1
+GROUP BY country
 ORDER BY total_shows DESC
 LIMIT 5;
 
